@@ -5,10 +5,10 @@ using UnityEngine;
 public class Pokemon
 {
     // PokemonBase 클래스 참조
-    PokemonBase base;
+    PokemonBase _base;
     int level;
 
-    public Pokemon(Pokemon pBase, int pLevel)
+    public Pokemon(PokemonBase pBase, int pLevel)
     {
         _base = pBase;
         level = pLevel;
