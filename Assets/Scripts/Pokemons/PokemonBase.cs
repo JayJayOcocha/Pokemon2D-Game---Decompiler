@@ -35,6 +35,9 @@ public class PokemonBase : ScriptableObject
     [SerializeField] int spDefense;
     [SerializeField] int speed;
 
+    // list를 사용해서 배울 수 있는 기술들을 저장해주나보네
+    [SerializeField] List<LearnableMove> learnableMoves;
+
     // two ways to expose a private varialbe outside the class
     // public string GetName()
     // {
@@ -78,8 +81,28 @@ public class PokemonBase : ScriptableObject
     public int Speed{
         get { return speed; }
     }
+    public List<LearnableMove> LearnableMove {
+        get {return learnableMoves;}
+    }
     
-    
+}
+
+[System.Serializable]
+// Unity Inspector에서 moveBase와 level을 
+// 필드를 보고 편집할 수 있게 해줌
+public class LearnableMove
+{
+    // MoveBase 클래스 참조해서
+    [SerializeField] private MoveBase moveBase;
+    [SerializeField] private int level;
+
+    public MoveBase MoveBase {
+        get { return moveBase; }
+    }
+
+    public int Level {
+        get { return level; }
+    }
 
 }
 
